@@ -1,0 +1,206 @@
+html{
+	font-size: 16px; /* Fuente base para rem */
+}
+
+html, body{
+/*	font-family: 'EB Garamond', serif;*/	
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	max-height: 100%;
+	color:#333;
+}
+
+header, h1, h2, h3{
+	font-family: 'EB Garamond', serif;
+}
+
+h1{
+	text-transform: uppercase;
+}
+
+p{
+	margin-top: 23px;
+	text-align: justify;
+}
+
+.container{
+	padding: 40px 20px;
+}
+
+.container-fluid{
+	padding: 0;
+}
+
+.head{
+	height: 426px;
+	padding:0;
+	position: relative;
+	margin-top: 51px;
+}
+
+.head header{
+	position: absolute;
+	z-index: 1;
+	top: 50%;    
+	left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color:#fff;
+    width: 100%;
+}
+
+.head header h1{
+	font-size: 3rem;
+	letter-spacing: 5px;
+}
+
+.head header h2{
+	font-size: 1.725rem;
+	letter-spacing: 1px;
+}
+
+.head header h3{
+	font-size: 1.5rem;
+	font-style: oblique;
+	letter-spacing: 2px;
+}
+
+/*-- Carousel --*/
+
+.carousel{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.carousel-inner{
+	background:#000;
+	height: 426px;
+}
+
+.carousel-item{
+	opacity: 0.7;
+}
+
+.carousel-item img{
+	/* Tamaño de las imágenes del carrusel. */
+	width: auto !important;
+	height: 60vh !important;
+	margin: 0 auto;
+}
+
+/*-- navbar --*/
+
+.navbar{
+	background:#1e2439;
+}
+
+.navbar-nav{
+	margin-left: auto; /* Para dejar los ítems a la derecha. */
+}
+
+.nav-link{
+	color:#fff;
+	font-size: 0.8125rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	padding-left: 0.875rem !important;
+	padding-right: 0.875rem !important;
+}
+
+.navbar-toggler{
+	margin-left: auto;
+}
+
+.fa-bars{
+	color:#fff;
+}
+
+.nav-link:hover{
+	color: #ec9e9e;
+}
+
+/* -- Lista de íconos --*/
+
+.icons-list{
+	padding: 0;
+	height: 240px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.icons{
+	color:#fff;
+	background:#ec9e9e;
+	font-size: 4.25em;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin:0 auto;
+	padding-top: 8px;
+}
+
+.icons-list h1{
+	font-size: 1.25em;
+	margin:25px 0 0 0;
+	font-family: 'Roboto';
+}
+
+.icons-list a{
+	display: block;
+	width: 100%;
+	height: 240px;
+	padding: 30px 0;
+	color:#333;
+}
+
+.icons-list a:before{ /* Pseudo elemento que ahora está haceindo de fondo para la animación de hover. Desktop only. */
+	content: "";
+	width: 100%;
+	height: 240px;
+	background:#1e2439;
+	position: absolute;
+	top: 240px;
+	left: 0;
+	z-index: -2;
+	/* Animación para hover. */
+    -webkit-transition: all 0.15s ease-in-out; 
+    -moz-transition: all 0.15s ease-in-out; 
+    -ms-transition: all 0.15s ease-in-out; 
+    transition: all 0.15s ease-in-out;
+}
+
+.icons-list a:hover:before{ 
+	top:0;
+}
+
+.icons-list a:hover{ /* Hover solo de link. */
+	text-decoration: none;
+	color:#fff;
+}
+
+.icons-list a:hover > .icons{ /* El ">" es un contextor entre elemento heredados. Acá digo que la clase .icons debe dejar su background transparente cada vez que el <a> que lo contiene tenga :hover. */
+	background: transparent;
+}
+
+.footer{
+	width: 100%;
+	background:#ccc;
+	margin-top: 80px;
+	padding: 8px 0;
+}
+
+.footer p{
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+}
+
+/* Media Queries. SIEMPRE van al final del CSS. */
+
+@media screen and (min-width:320px) and (max-width: 767px){
+	.carousel-inner{
+		height: 420px;
+	}
+}
